@@ -17,8 +17,8 @@ public class Registration {
     public RegistrationService registrationService;
 
     @PostMapping
-    public void createUser(@RequestBody User user){
+    public User createUser(@RequestBody User user){
 
-        registrationService.saveUser(user);
+        return registrationService.saveUser(user);
     }
 }
