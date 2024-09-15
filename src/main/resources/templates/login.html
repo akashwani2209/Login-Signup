@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Login Page</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<h2>Login</h2>
+
+<form th:action="@{/login}" method="post">
+    <div>
+        <label for="username">Username/Email:</label>
+        <input type="text" id="username" name="username" required />
+    </div>
+    <div>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required />
+    </div>
+    <div>
+        <button type="submit">Login</button>
+    </div>
+</form>
+
+<div>
+    <p>Or login with:</p>
+    <!-- OAuth2 Login Links -->
+    <a href="/oauth2/authorization/google">Login with Google</a><br />
+    <a href="/oauth2/authorization/github">Login with GitHub</a>
+</div>
+
+<div>
+    <p>Don't have an account? <a th:href="@{/register}">Register here</a></p>
+</div>
+</body>
+</html>
